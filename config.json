@@ -1,0 +1,25 @@
+{
+    "debug": true,
+    "featureManagerIsFullZoneProvisioningEnabled": false,
+    "isDNSPageEnabled": false,
+    "isSubdomainCheckEnabled": true,
+    "useHostAPILogin": false,
+    "homePageCards": [
+        "ApplyDefaultSettingsCard",
+        "PurgeCacheCard"
+    ],
+    "moreSettingsCards": {
+        "container.moresettings.speed": [
+            "AlwaysOnlineCard",
+            "PluginSpecificCacheCard",
+            "DevelopmentModeCard"
+        ],
+        "container.moresettings.security": [
+            "SecurityLevelCard",
+            "AutomaticHTTPSRewritesCard"
+        ]
+    },
+    "locale": "en",
+    "integrationName": "wordpress",
+    "version": "1.0.2"
+}
