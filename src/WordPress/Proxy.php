@@ -84,9 +84,9 @@ class Proxy
 
         if (strtoupper($method === 'GET')) {
             if ($_GET['proxyURLType'] === 'CLIENT') {
-                $path = API\Client::ENDPOINT . $_GET['proxyURL'];
+                $path = esc_url(API\Client::ENDPOINT . $_GET['proxyURL']);
             } elseif ($_GET['proxyURLType'] === 'PLUGIN') {
-                $path = API\Plugin::ENDPOINT . $_GET['proxyURL'];
+                $path = esc_url(API\Plugin::ENDPOINT . $_GET['proxyURL']);
             }
         } else {
             $path = $body['proxyURL'] ?? '';

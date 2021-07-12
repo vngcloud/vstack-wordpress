@@ -53,9 +53,7 @@ if (is_admin()) {
 
     //Add CloudFlare Plugin homepage to admin settings menu
     add_action('plugin_action_links_vstack/vstack.php', array($cloudflareHooks, 'pluginActionLinks'));
-// echo '<pre>';
-// print_r($cloudflareHooks);
-// echo '</pre>';
+
     // Load Activation Script
     register_activation_hook(VSTACK_PLUGIN_DIR.'vstack.php', array($cloudflareHooks, 'activate'));
 

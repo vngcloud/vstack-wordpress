@@ -3,7 +3,7 @@
 Plugin Name: vStack
 Plugin URI: https://helpcenter.vngstack.com/support/blog/2021/04/28/new-wordpress-plugin/
 Description: vStack speeds up and protects your WordPress site.
-Version: 1.0.2
+Version: 4.5.1
 Requires PHP: 7.2
 Author: VNG Cloud, Inc.
 License: BSD-3-Clause

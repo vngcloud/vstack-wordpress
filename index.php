@@ -25,7 +25,7 @@ wp_enqueue_script('cf-compiledjs', plugins_url('compiled.js', __FILE__), null, $
 window.absoluteUrlBase = '<?php echo plugins_url('/vstack/'); ?>';
 
 cfCSRFToken = '<?php echo wp_create_nonce(\VSTACK\WordPress\WordPressAPI::API_NONCE); ?>';
-localStorage.cfEmail = '<?php echo $dataStore->getCloudFlareEmail(); ?>';
+localStorage.cfEmail = '<?php echo sanitize_email($dataStore->getCloudFlareEmail()); ?>';
 
 /*
  * A callback for cf-util-http to proxy all calls to our backend
@@ -50,8 +50,8 @@ window.RestProxyCallback = (opts) => {
         opts.parameters['action'] = '<?php echo \VSTACK\WordPress\Hooks::WP_AJAX_ACTION; ?>'
 
         if (opts.method.toUpperCase() === 'GET') {
-            var clientAPIURL = '<?php echo \VSTACK\API\Client::ENDPOINT; ?>';
-            var pluginAPIURL = '<?php echo \VSTACK\API\Plugin::ENDPOINT; ?>';
+            var clientAPIURL = '<?php echo esc_url(\VSTACK\API\Client::ENDPOINT); ?>';
+            var pluginAPIURL = '<?php echo esc_url(\VSTACK\API\Plugin::ENDPOINT); ?>';
 
             // If opts.url begins with clientAPIURL or pluginAPIURL,
             // remove the API URL and assign the rest to proxyURL
@@ -77,7 +77,7 @@ window.RestProxyCallback = (opts) => {
     } else {
         // To avoid static files getting cached add the version number
         // to the url
-        var versionNumber = '<?php echo $pluginVersion; ?>';
+        var versionNumber = '<?php echo esc_html($pluginVersion); ?>';
         opts.url = absoluteUrlBase + opts.url + '?ver=' + versionNumber;
     }
 }

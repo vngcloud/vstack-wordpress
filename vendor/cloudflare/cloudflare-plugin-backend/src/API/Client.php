@@ -8,7 +8,6 @@ use VSTACK\Integration\IntegrationInterface;
 class Client extends AbstractAPIClient
 {
     const CLIENT_API_NAME = 'CLIENT API';
-    //const ENDPOINT = 'https://api.cloudflare.com/client/v4/';
     const ENDPOINT = 'https://api.vngstack.com/client/v4/';
     const X_AUTH_KEY = 'X-Auth-Key';
     const X_AUTH_EMAIL = 'X-Auth-Email';

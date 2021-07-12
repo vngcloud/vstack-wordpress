@@ -44,7 +44,7 @@ class ClientActions
         // We tried to fetch a zone but it's possible we're using an API token,
         // So try again with a zone name filtered API call
         if (!$this->api->responseOk($response)) {
-            $zoneRequest = new Request('GET', 'zones/', array('name' => idn_to_ascii($this->wordpressAPI->getOriginalDomain(), IDNA_DEFAULT, INTL_IDNA_VARIANT_UTS46), array()));
+            $zoneRequest = new Request('GET', 'zones/', array('name' => idn_to_ascii($this->wordpressAPI->getOriginalDomain(), IDNA_DEFAULT, INTL_IDNA_VARIANT_UTS46), array()), array());
             $zoneResponse = $this->api->callAPI($zoneRequest);
 
             return $zoneResponse;
