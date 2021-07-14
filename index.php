@@ -22,7 +22,7 @@ wp_enqueue_script('cf-compiledjs', plugins_url('compiled.js', __FILE__), null, $
 <div id="root" class="cloudflare-partners site-wrapper"></div>
 <script>
 //Set global absolute base url
-window.absoluteUrlBase = '<?php echo plugins_url('/vstack/'); ?>';
+window.absoluteUrlBase = '<?php echo plugin_dir_url(__FILE__); ?>';
 
 cfCSRFToken = '<?php echo wp_create_nonce(\VSTACK\WordPress\WordPressAPI::API_NONCE); ?>';
 localStorage.cfEmail = '<?php echo sanitize_email($dataStore->getCloudFlareEmail()); ?>';
